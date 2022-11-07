@@ -60,13 +60,14 @@ namespace TestFramework.Utilities.Hooks
             var stacktrace = string.IsNullOrEmpty(TestContext.CurrentContext.Result.StackTrace) ? ""
             : string.Format("{0}", TestContext.CurrentContext.Result.StackTrace);
             Status logstatus;
+            var message = TestContext.CurrentContext.Result.Message;
             switch (status)
             {
                 case TestStatus.Failed:
                     logstatus = Status.Fail;
                     DateTime time = DateTime.Now;
                     String fileName = "Screenshot_" + time.ToString("h_mm_ss") + ".png";
-                    _test.Fail("Test Failed", WebDriverHelper.Capture(DriverContext.Driver, fileName));
+                    _test.Fail("Test Failed " + message, WebDriverHelper.Capture(DriverContext.Driver, fileName));
                     break;
                 case TestStatus.Inconclusive:
                     logstatus = Status.Warning;
@@ -83,8 +84,8 @@ namespace TestFramework.Utilities.Hooks
                 //_test.CreateNode("Step Details", el);
                 _test.Info("Step Details  " + el);
             }
-            _test.Log(logstatus, "Test ended with " + logstatus + stacktrace);
-            LogHelpers.WriteToFile(TestContext.CurrentContext.Test.Name.ToString(), logstatus.ToString(), stacktrace.ToString());
+            _test.Log(logstatus, "Test ended with " + logstatus + message + stacktrace);
+            LogHelpers.WriteToFile(TestContext.CurrentContext.Test.Name.ToString(), logstatus.ToString(), message + stacktrace);
             File.Create(filePath).Close();
             WebDriverBase.CloseBrowser();
             _extent.Flush();
