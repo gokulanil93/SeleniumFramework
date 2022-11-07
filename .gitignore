@@ -3,3 +3,9 @@
 ################################################################################
 
 /TestProject/allure-report
+/TestProject/bin/Debug/netcoreapp3.1
+/TestProject/obj
+/TestProject/target/allure-results
+/TestFramework/obj
+/TestFramework/bin/Debug/netcoreapp3.1
+/.vs/TestFramework
