@@ -4,11 +4,11 @@ using TestFramework.Utilities.Helper;
 using TestFramework.Utilities.Hooks;
 
 namespace TestProject.POM
-{
+{ 
     [TestFixture]
     public class AjioTests : HooksClass
     {
-        [Test, Category("Smoke Testing")]
+        [Test, Category("Smoke Testing"),Retry(2)]
         public void AjioTest()
         {
             AjioHeaderPage ajioHeaderPageObj = new AjioHeaderPage();

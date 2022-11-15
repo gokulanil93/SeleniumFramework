@@ -16,7 +16,7 @@ namespace TestFramework.Utilities.Extensions
         {
             try
             {
-                WebDriverBase.ExplicitWait("xpath", element, 10);
+                WebDriverBase.ExplicitWait("xpath", element, 20);
                 var a = DriverContext.Driver.FindElement(By.XPath(element));
                 LogHelpers.WriteToFile("Element Identification of", element, "Successful");
                 return a;

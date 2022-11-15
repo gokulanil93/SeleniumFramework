@@ -33,7 +33,6 @@ namespace TestFramework.Utilities.Hooks
 
             var htmlReporter = new ExtentHtmlReporter(reportPath);
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            //_extent = new ExtentReports();
             _extent.AttachReporter(htmlReporter);
             _extent.AddSystemInfo("Environment", "QA");
             _extent.AddSystemInfo("UserName", "Gokul");
@@ -81,7 +80,6 @@ namespace TestFramework.Utilities.Hooks
             }
             foreach (string el in LogHelpers.Log(filePath))
             {
-                //_test.CreateNode("Step Details", el);
                 _test.Info("Step Details  " + el);
             }
             _test.Log(logstatus, "Test ended with " + logstatus + message + stacktrace);
