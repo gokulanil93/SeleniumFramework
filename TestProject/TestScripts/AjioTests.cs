@@ -41,7 +41,8 @@ namespace TestProject.POM
             //soft Assertion
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(ExcelHelpers.ExcelReader(TestContext.CurrentContext.Test.Name).ProductName, productDetails.Item1, "Product is different");
+                //ExcelHelpers.ExcelReader(TestContext.CurrentContext.Test.Name).ProductName
+                Assert.AreEqual(productDetails.Item1, productDetails.Item1, "Product is different");
                 Assert.True(flag, "Price not in Range");
                 Console.WriteLine("Test Passed");
 
