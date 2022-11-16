@@ -1,4 +1,5 @@
 ﻿using NPOI.XSSF.UserModel;
+using System;
 using System.IO;
 
 namespace TestFramework.Utilities.Helper
@@ -12,7 +13,12 @@ namespace TestFramework.Utilities.Helper
         /// <returns></returns>
         public static ExcelDataModel ExcelReader(string key)
         {
-            string location = Directory.GetCurrentDirectory().Replace("bin\\Debug\\netcoreapp3.1", "TestData\\Login.xlsx");
+            var path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+            var actualPath = path.Substring(0, path.LastIndexOf("bin"));
+            var projectPath = new Uri(actualPath).LocalPath;
+
+            string location = projectPath + "TestData\\Login.xlsx";
+            //Directory.GetCurrentDirectory().Replace("bin\\Debug\\netcoreapp3.1", "TestData\\Login.xlsx");
 
             XSSFWorkbook excel = new XSSFWorkbook(File.Open(location, FileMode.Open));
 
