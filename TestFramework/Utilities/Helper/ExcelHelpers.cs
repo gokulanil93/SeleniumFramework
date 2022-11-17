@@ -16,9 +16,7 @@ namespace TestFramework.Utilities.Helper
             var path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
             var actualPath = path.Substring(0, path.LastIndexOf("bin"));
             var projectPath = new Uri(actualPath).LocalPath;
-
             string location = projectPath + "TestData\\Login.xlsx";
-            //Directory.GetCurrentDirectory().Replace("bin\\Debug\\netcoreapp3.1", "TestData\\Login.xlsx");
 
             XSSFWorkbook excel = new XSSFWorkbook(File.Open(location, FileMode.Open));
 

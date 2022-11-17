@@ -20,7 +20,7 @@ namespace TestFramework.Utilities.Helper
             if (File.Exists(filePath))
             {
                 File.AppendAllText(filePath,
-                   DateTime.Now.ToString() +" "+ testName + " " + status + " " + message + Environment.NewLine);
+                   DateTime.Now.ToString() + " " + testName + " " + status + " " + message + Environment.NewLine);
             }
         }
 

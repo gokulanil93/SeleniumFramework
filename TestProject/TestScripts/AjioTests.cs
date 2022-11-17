@@ -4,11 +4,11 @@ using TestFramework.Utilities.Helper;
 using TestFramework.Utilities.Hooks;
 
 namespace TestProject.POM
-{ 
+{
     [TestFixture]
     public class AjioTests : HooksClass
     {
-        [Test, Category("Smoke Testing"),Retry(2)]
+        [Test, Category("Smoke Testing"), Retry(2)]
         public void AjioTest()
         {
             AjioHeaderPage ajioHeaderPageObj = new AjioHeaderPage();
@@ -24,11 +24,10 @@ namespace TestProject.POM
                 Assert.AreEqual(ExcelHelpers.ExcelReader(TestContext.CurrentContext.Test.Name).ProductName, productDetails.Item1, "Product is different");
                 Assert.True(flag, "Price not in Range");
                 Console.WriteLine("Test Passed");
-
             });
         }
 
-        [Test, Category("Regression Testing")]
+        [Test, Category("Regression Testing"), Retry(2)]
         public void AjioTestToVerifyThirdProduct()
         {
             AjioHeaderPage ajioHeaderPageObj = new AjioHeaderPage();
@@ -41,11 +40,9 @@ namespace TestProject.POM
             //soft Assertion
             Assert.Multiple(() =>
             {
-                //ExcelHelpers.ExcelReader(TestContext.CurrentContext.Test.Name).ProductName
                 Assert.AreEqual(ExcelHelpers.ExcelReader(TestContext.CurrentContext.Test.Name).ProductName, productDetails.Item1, "Product is different");
                 Assert.True(flag, "Price not in Range");
                 Console.WriteLine("Test Passed");
-
             });
         }
     }
