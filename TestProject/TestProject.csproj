@@ -21,12 +21,9 @@
     <None Remove="target\**" />
   </ItemGroup>
 
+  
   <ItemGroup>
-    <None Remove="TestData\Login.xlsx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="TestData\Login.xlsx">
+    <EmbeddedResource Include="TestData\Data.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

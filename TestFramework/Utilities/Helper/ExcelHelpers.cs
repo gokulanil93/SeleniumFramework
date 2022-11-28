@@ -16,7 +16,7 @@ namespace TestFramework.Utilities.Helper
             var path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
             var actualPath = path.Substring(0, path.LastIndexOf("bin"));
             var projectPath = new Uri(actualPath).LocalPath;
-            string location = projectPath + "TestData\\Login.xlsx";
+            string location = projectPath + "TestData\\Data.xlsx";
 
             XSSFWorkbook excel = new XSSFWorkbook(File.Open(location, FileMode.Open));
 
@@ -29,7 +29,8 @@ namespace TestFramework.Utilities.Helper
                 if (obj.Key == key)
                 {
                     obj.ProductName = row.GetCell(1).StringCellValue;
-                    //obj.Password = row.GetCell(2).StringCellValue;
+                    obj.Min = row.GetCell(2).NumericCellValue;
+                    obj.Max = row.GetCell(3).NumericCellValue;
                 }
             }
             return obj;
@@ -40,6 +41,7 @@ namespace TestFramework.Utilities.Helper
     {
         public string Key { get; set; }
         public string ProductName { get; set; }
-        //public string Password { get; set; }
+        public double Min { get; set; }
+        public double Max { get; set; }
     }
 }

@@ -56,10 +56,10 @@ namespace TestProject.POM
         /// Method to verify the price of product is within the range provided 
         /// </summary>
         /// <param name="productPrice"></param>
-        /// <param name="max"></param>
         /// <param name="min"></param>
+        /// <param name="max"></param>
         /// <returns></returns>
-        public bool VerifyPriceRange(float productPrice, float max, float min)
+        public bool VerifyPriceRange(float productPrice, double min, double max)
         {
             bool flag = false;
             if (productPrice > min && productPrice < max)
