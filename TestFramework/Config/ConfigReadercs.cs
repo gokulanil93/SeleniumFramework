@@ -4,7 +4,7 @@ using System.IO;
 
 namespace TestFramework.Config
 {
-    public class ConfigReader
+    public static class ConfigReader
     {
         public static void SetFrameworkSettings()
         {

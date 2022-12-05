@@ -4,7 +4,7 @@ using System.IO;
 
 namespace TestFramework.Utilities.Helper
 {
-    public class LogHelpers
+    public static class LogHelpers
     {
         public static StreamWriter stream = null;
         public static string filePath = @"C:\Users\Gokul Anil\source\repos\TestFramework\TestProject\Log\Logger.log";

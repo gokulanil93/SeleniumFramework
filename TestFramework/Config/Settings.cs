@@ -1,6 +1,6 @@
 ﻿namespace TestFramework.Config
 {
-    public class Settings
+    public static class Settings
     {
 
         public static string URL { get; set; }

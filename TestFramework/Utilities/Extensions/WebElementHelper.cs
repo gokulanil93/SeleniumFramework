@@ -22,7 +22,7 @@ namespace TestFramework.Utilities.Extensions
             }
             catch (Exception)
             {
-                throw new Exception(string.Format("DropDown Selection Failed"));
+                throw new Exception("DropDown Selection Failed");
             }
         }
 
@@ -33,15 +33,19 @@ namespace TestFramework.Utilities.Extensions
         public static void AsserElementIsPresent(this IWebElement element)
         {
             if (!IsElementPresent(element))
-                throw new Exception(string.Format("Element not Present Exeption"));
+                throw new Exception(("Element not Present Exeption"));
         }
 
         private static bool IsElementPresent(IWebElement element)
         {
             try
             {
-                bool ele = element.Displayed;
-                return true;
+                bool el=false;
+                if (element.Displayed)
+                {
+                   el=true;
+                }
+                return el;
             }
             catch (Exception)
             {
@@ -65,7 +69,7 @@ namespace TestFramework.Utilities.Extensions
             catch (Exception)
             {
                 LogHelpers.WriteToFile("Hover over to ", element.ToString(), "is not Successful");
-                throw new Exception(string.Format("Action Cannot be performed"));
+                throw new Exception(("Action Cannot be performed"));
 
             }
         }
