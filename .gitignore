@@ -9,3 +9,5 @@
 /TestFramework/obj
 /TestFramework/bin/Debug/netcoreapp3.1
 /.vs/TestFramework
+/TestProject/.sonarqube
+/.sonarqube

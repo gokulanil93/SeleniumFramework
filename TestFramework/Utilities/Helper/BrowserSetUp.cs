@@ -6,7 +6,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace TestFramework.Utilities.Helper
 {
-    public class BrowserSetUp
+    public static class BrowserSetUp
     {
         /// <summary>
         /// Method to select browser based on Framework settings

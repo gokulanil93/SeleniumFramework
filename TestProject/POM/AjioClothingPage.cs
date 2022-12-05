@@ -78,7 +78,7 @@ namespace TestProject.POM
         {
             string parentWindowHandle = DriverContext.Driver.CurrentWindowHandle;
             WebDriverHelper.FindElemntByxpath($"(//div[@class='imgHolder'])[{n}]//following-sibling::div[@class='contentHolder']").Click();
-            //FirstProduct.Click();
+            
             List<string> listOfWindows = DriverContext.Driver.WindowHandles.ToList();
             foreach (var el in listOfWindows)
             {
