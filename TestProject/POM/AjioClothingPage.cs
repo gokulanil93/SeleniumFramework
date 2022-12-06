@@ -90,4 +90,5 @@ namespace TestProject.POM
             return Tuple.Create(ProductName.Text, PriceOfProduct);
         }
     }
+
 }
