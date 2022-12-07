@@ -80,7 +80,13 @@ namespace TestFramework.Utilities.Hooks
             }
             foreach (string el in LogHelpers.Log(filePath))
             {
-                _test.Info("Step Details  " + el);
+                if (el.EndsWith("Successful"))
+                {
+                    _test.Pass("Step Details  " + el);
+                }
+                else
+                    _test.Fail("Step Details  " + el);
+
             }
             _test.Log(logstatus, "Test ended with " + logstatus + message + stacktrace);
             LogHelpers.WriteToFile(TestContext.CurrentContext.Test.Name.ToString(), logstatus.ToString(), message + stacktrace);
